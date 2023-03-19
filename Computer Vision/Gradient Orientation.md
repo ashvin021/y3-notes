@@ -1,0 +1,1 @@
+> $$\theta = \arctan(g_y, g_x)$$where $\theta$ is the gradient orientation, and $g_x$ and $g_y$ are the gradients in the $x$ and $y$ directions.

@@ -1,48 +1,6 @@
 
 1. Robot Motion
-	- define 2 coordinate frames: world frame W and robot frame R
-	- degrees of freedom (DOF): 
-		- rigid body that translates and rotates along 1D path - train - 1 DOF (1 translational)
-		- rigid body that translates and rotates on 2D plane - ground robot - 3 DOF (2 translational, 1 rotational)
-		- translates and rotates in 3D volume - flying robot - 6 DOF (3 trans, 3 rot.)
-		- holonomic robot is one that can move instantaneously in any direction in the space of its degrees of freedom
-	- holonomic ground robot - possible with omnidirectional wheels
-	- standard wheel configurations - drive and steer (car), differential drive - both non holonomic - both use 2 motors each
-	- differential drive 
-		- two driving wheels on left and right sides of robot, each driven by its own motor. steering done by setting different wheel speeds. straight line motion if v_L = v_R. turns on spot if v_L = -v_R
-		- ![[Pasted image 20230315213006.png]]
-	- Car
-		- two motors - one to drive, one to steer
-		- follows circular path with fixed speed and steering angle.
-		- four wheels - need rear differential and variable ('ackerman') linkage for steering
-		- ![[Pasted image 20230315213728.png]] where R_d = L / sin(s)
-	- robot speed v = r_w * omega (where omega (w) = angular velocity, r_w = radius of wheel)
-	- DC motors:
-		- power signal is sent to motor using PWM - pulse width modulation. we set the amount of power to be sent. Most often this is a voltage signal with a fixed amplitude but with the amount of 'fill-in' set using PWM
-		- for precision, encoders and feedback can be used for servo control using a PID control law.
-		- lego motor has encoder that records angular position. 
-		- Principle: decide where we want the motor to be at every point in time. At a high rate, check where the motor actually is from the encoder. Record the difference (the error). Send a power demand to the motor depending on the error, aiming to reduce it. • Our motors: record motion rotational position in degrees. • Two main modes: position control (where demand is a constant) and velocity control (where demand increases linearly with time).
-		- ![[Pasted image 20230316110956.png]]
-		- ![[Pasted image 20230316111126.png]]
-		- ![[Pasted image 20230316111212.png]]
-		- position-based planning
-			- turn to next waypoint and drive straight towards it.
-			- ![[Pasted image 20230316111353.png]]
-			- tan inverse can be achieved with atan2(dy, dx) in python
-			- ![[Pasted image 20230316111502.png]]
-		- local planning: dynamic window approach
-			- robot wants to plan path around complicated set of obstacles.
-			- Consider robot dynamics and possible changes in motion it can make within small time dt. 
-			- For each possible motion look ahead longer time τ . Calculate benefit/cost based on distance from target and obstacles. 
-			- Choose the best and execute for dt, then do it again.
-			- ![[Pasted image 20230316111756.png]]
-			- ![[Pasted image 20230316111909.png]]
-		- Global planing: wavefront method
-			- brute force 'flood fill' breadth first search of whole environment.
-			- guaranteed to find shortest route, but slow
-		- global planning: rapidly exploring randomised trees (RRT) method
-			- Algorithm grows a tree of connected nodes by randomly sampling points and extending the tree a short step from the closest node. 
-			- Expands rapidly into new areas, but without the same guarantees.
+	
 
 
 2. Sensors

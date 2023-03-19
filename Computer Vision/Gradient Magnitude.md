@@ -1,0 +1,1 @@
+ > $$g = \sqrt{g_x^2 + g_y^2}$$ where $g$ is the gradient magnitude, and $g_x$ and $g_y$ are the gradients in the $x$ and $y$ directions.

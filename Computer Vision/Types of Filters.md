@@ -1,0 +1,21 @@
+- Identity
+	-  $$\begin{bmatrix} & & \\ & 1 & \\ & & \end{bmatrix}$$
+- Low Pass
+	- Moving average
+		- $$\begin{bmatrix} \frac{1}{9} & \frac{1}{9} &\frac{1}{9} \\ \frac{1}{9} & \frac{1}{9} &\frac{1}{9} \\ \frac{1}{9} & \frac{1}{9} &\frac{1}{9}\end{bmatrix}$$
+	- ![[2D Gaussian Filter]]
+- High Pass
+	- Design 1: Identity + (Identity - Moving Average)
+		- $$\begin{bmatrix} & & \\ & 1 & \\ & & \end{bmatrix} + (\begin{bmatrix} & & \\ & 1 & \\ & & \end{bmatrix} - \begin{bmatrix} \frac{1}{9} & \frac{1}{9} & \frac{1}{9} \\ \frac{1}{9} & \frac{1}{9} & \frac{1}{9} \\ \frac{1}{9} & \frac{1}{9} & \frac{1}{9} \end{bmatrix}) = \begin{bmatrix} -\frac{1}{9} & -\frac{1}{9} & -\frac{1}{9} \\ -\frac{1}{9} & 1 + \frac{8}{9} & -\frac{1}{9} \\ -\frac{1}{9} & -\frac{1}{9} & -\frac{1}{9} \end{bmatrix}$$
+	- Design 2: Identity + High-frequency
+		- $$\begin{bmatrix} & & \\ & 1 & \\ & & \end{bmatrix} + \begin{bmatrix} -\frac{1}{8} & -\frac{1}{8} & -\frac{1}{8} \\ -\frac{1}{8} & 1 & -\frac{1}{8} \\ -\frac{1}{8} & -\frac{1}{8} & -\frac{1}{8} \end{bmatrix} = \begin{bmatrix} -\frac{1}{8} & -\frac{1}{8} & -\frac{1}{8} \\ -\frac{1}{8} & 2 & -\frac{1}{8} \\ -\frac{1}{8} & -\frac{1}{8} & -\frac{1}{8} \end{bmatrix}$$
+- Denoising Filters
+	- Median Filter
+		 - This is a non-linear filter
+		 - Move the sliding window and replace the centre pixel using the median value in the window.
+- Edge Detection
+	- ![[Prewitt Filter]]
+	- ![[Sobel Filter]]
+- Feature Description
+	- Laplacian of Gaussians
+	- Difference of Gaussians
