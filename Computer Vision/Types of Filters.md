@@ -17,5 +17,5 @@
 	- ![[Prewitt Filter]]
 	- ![[Sobel Filter]]
 - Feature Description
-	- Laplacian of Gaussians
-	- Difference of Gaussians
+	- ![[Laplacian of Gaussian]]
+	- ![[Difference of Gaussian]]

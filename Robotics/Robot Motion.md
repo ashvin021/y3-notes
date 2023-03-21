@@ -1,5 +1,3 @@
-$$\newcommand\colv[1]{\begin{bmatrix}#1\end{bmatrix}}$$
-
 - **Position and Motion of a Robot**
 	- Coordinate Frames
 		- Define 2 coordinate frames:

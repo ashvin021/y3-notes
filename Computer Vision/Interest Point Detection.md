@@ -1,11 +1,23 @@
+### Why is it important?
+- Often a pre-requisite for other tasks, such as
+	- Facial image analysis
+	- Image classification
+	- Image matching
+- Provide an efficient representation of image content
+- We only need to work with a few interest points as opposed to all the pixels
 
-1. Harris Detector
-	- Basic Idea:
-		- Look at a small window of pixels, to tell the difference between edge pixels and corner pixels
-		- Shift the window and calculate the change of intensities for the window
-			- *Edge*: change of intensity along just one direction
-			- *Corner*: change of intensity along both directions
-			- 
-2. Scale Adapted Harris Detector
-3. Laplacian of Gaussian
-4. Difference of Gaussian
+### Corner Detection
+![[Corner Detection]]
+
+### Harris Detector
+![[Harris Detector]]
+
+### Scale Adapted Harris Detector
+![[Scale Adapted Harris Detector]]
+
+
+### Laplacian of Gaussian
+![[Laplacian of Gaussian]]
+
+### Difference of Gaussian
+![[Difference of Gaussian]]

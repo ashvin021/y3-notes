@@ -1,0 +1,1 @@
+> An $L_p$ norm is defined as the following: $$D_p(x, y) = \left( \sum_{i = 1}^n{|x_i - y_i|^p}\right)^{\frac{1}{p}}$$

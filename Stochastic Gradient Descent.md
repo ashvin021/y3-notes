@@ -1,0 +1,7 @@
+- Steps:
+	- For each iteration in optimisation with loss function $L(\mb{w}, b)$,
+		- Randomly select a batch $B$ of training samples
+		- Calculate the gradient $\nabla_{\mb{w}}L_B$ and $\nabla_bL_B$ only for this batch
+		- Update the parameters:
+			- $$\mb{w}^{(k + 1)} = \mb{w}^{(k)} - \eta \nabla_{\mb{w}}L_B(\mb{w}^{(k)}, n^{(k)})$$
+			- $$b^{(k + 1)} = b^{(k)} - \eta \nabla_b L_B(\mb{w}^{(k)}, b^{(k)})$$
